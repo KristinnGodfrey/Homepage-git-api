@@ -2,5 +2,5 @@
 
 ## React
 
-## Github Rest API
+## Github REST API
 
