@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const [length, setLength] = useState('');
   const [name, setname] = useState('');
   const [userName, setUserName] = useState('');
   const [followers, setFollowers] = useState(''); 
@@ -15,21 +16,20 @@ function App() {
     fetch('https://api.github.com/users/kristinngodfrey/repos')
       .then(res => res.json())
       .then(data => {
-        console.log(data[0]);
-        setData(data[0]);
+        setData(data);
       });
   }, []);
 
   const setData = ({
-    name
+    length
   }) => {
-    setname(name);
+    setLength(length);
   };
 
 
   return (
     <div>
-      <h1>{name}</h1>
+      <h1>I have {length} repos on github!</h1>
     </div>
   );
 }
