@@ -16,9 +16,17 @@ function App() {
     fetch('https://api.github.com/users/kristinngodfrey/repos')
       .then(res => res.json())
       .then(data => {
+        data.forEach(d => {
+          fetch('https://api.github.com/users/kristinngodfrey/repos/{d}/languages')
+          .then(res => res.json())
+          .then(data2 => {
+            console.log(data2);
+        })
+        console.log(data);
         setData(data);
       });
   }, []);
+  
 
   const setData = ({
     length
