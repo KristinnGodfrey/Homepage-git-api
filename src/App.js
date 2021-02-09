@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import FixedMenuLayout from './main.js';
 import logo from './logo.svg';
+import messages from './messages.js'
 import './App.css';
 
 function App() {
@@ -16,12 +18,6 @@ function App() {
     fetch('https://api.github.com/users/kristinngodfrey/repos')
       .then(res => res.json())
       .then(data => {
-        data.forEach(d => {
-          fetch('https://api.github.com/users/kristinngodfrey/repos/{d}/languages')
-          .then(res => res.json())
-          .then(data2 => {
-            console.log(data2);
-        })
         console.log(data);
         setData(data);
       });
@@ -33,11 +29,13 @@ function App() {
   }) => {
     setLength(length);
   };
-
-
-  return (
+  const data = <h1>I have {length} repos on github!</h1>
+  return (    
     <div>
-      <h1>I have {length} repos on github!</h1>
+      
+      <FixedMenuLayout data={ data } />
+      
+      
     </div>
   );
 }
