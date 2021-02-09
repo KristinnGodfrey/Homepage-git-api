@@ -1,18 +1,39 @@
-import React, { Component, useState } from 'react'
+import React, { Component } from 'react'
 import { Menu, Segment } from 'semantic-ui-react'
-import messages from './messages.js'
+
+// const renderedContent = ({activeItem}) => {
+//   if(activeItem == 'friends'){
+//         return <home />
+//   }
+//   if(activeItem == 'home'){
+//     <h1>KKKKK</h1>
+//   }
+// }
+// const home = () => {
+//   <h1> Helloooo</h1>
+// }
 
 class MenuExampleSecondaryPointing extends Component {
+
+  constructor(props) {
+    super(props);
+  }
+
   state = { activeItem: 'home' }
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
+  
+
   render() {
     const { activeItem } = this.state
 
-    return (
+    
+
+
+    return (      
       <div>
-        <Menu pointing secondary>
+         <Menu pointing secondary>
           <Menu.Item
             name='home'
             active={activeItem === 'home'}
@@ -30,12 +51,15 @@ class MenuExampleSecondaryPointing extends Component {
           />
         </Menu>
 
-        <Segment>          
-          <h1>I have {data} repos on github</h1>
+        <Segment>
+          
+          {/* <renderedContent activeItem={activeItem}/> */}
+          {this.props.data}
           {activeItem}
         </Segment>
       </div>
     )
+    
   }
 }
 

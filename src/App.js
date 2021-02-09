@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import FixedMenuLayout from './main.js';
+import Content from './Components/main.js';
 import logo from './logo.svg';
 import messages from './messages.js'
 import './App.css';
@@ -29,13 +29,12 @@ function App() {
   }) => {
     setLength(length);
   };
+
   const data = <h1>I have {length} repos on github!</h1>
+  
   return (    
     <div>
-      
-      <FixedMenuLayout data={ data } />
-      
-      
+      <Content data={ data } />
     </div>
   );
 }
