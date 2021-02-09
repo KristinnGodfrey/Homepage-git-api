@@ -1,18 +1,6 @@
 import React, { Component } from 'react'
 import { Menu, Segment } from 'semantic-ui-react'
 
-// const renderedContent = ({activeItem}) => {
-//   if(activeItem == 'friends'){
-//         return <home />
-//   }
-//   if(activeItem == 'home'){
-//     <h1>KKKKK</h1>
-//   }
-// }
-// const home = () => {
-//   <h1> Helloooo</h1>
-// }
-
 class MenuExampleSecondaryPointing extends Component {
 
   constructor(props) {
@@ -23,14 +11,9 @@ class MenuExampleSecondaryPointing extends Component {
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
-  
-
   render() {
     const { activeItem } = this.state
-
     
-
-
     return (      
       <div>
          <Menu pointing secondary>
@@ -50,16 +33,12 @@ class MenuExampleSecondaryPointing extends Component {
             onClick={this.handleItemClick}
           />
         </Menu>
-
         <Segment>
-          
-          {/* <renderedContent activeItem={activeItem}/> */}
-          {this.props.data}
+          {this.props.data}          
           {activeItem}
         </Segment>
       </div>
-    )
-    
+    )    
   }
 }
 
